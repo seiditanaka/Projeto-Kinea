@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Consulta de Cotações</title>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+        <style>
+            nome {
+                font-size: 30px;
+                color: #333;
+                position: absolute;
+                top: 90%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+            .centered-image {
+                position: absolute; /* Define a posição absoluta da imagem */
+                top: 22%; /* Move a imagem 50% para baixo */
+                left: 50%; /* Move a imagem 50% para a direita */
+                transform: translate(-50%, -50%); /* Centraliza a imagem no centro do bloco */
+            }
+            body {
+                font-family: 'Roboto', sans-serif;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                background-color: #f5f5f5;
+            }
+            form {
+                background-color: #fff;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0px 0px 30px rgba(0,0,0,0.1);
+            }
+    
+            label, input {
+                margin-bottom: 12px;
+                display: block;  /* adicionado para fazer os elementos ocuparem suas próprias linhas */
+            }
+    
+            /* Estilizando o placeholder do input */
+            input[type="date"]::-webkit-input-placeholder { /* Chrome, Edge, Safari */
+                font-style: italic;
+                color: gray;    
+            }
+        </style>
+    </head>
+<body>
+    <nome>Projeto Kinea - Felipe Seidi Tanaka</nome>
+    <img src="https://yt3.googleusercontent.com/YBvaqvFq5PFbaPMeBiuMqHpFt2dEfBfPqWrWn5MS6N7DnWBdgYwvpv0gwtzA0jLARftfHr22gQ=s900-c-k-c0x00ffffff-no-rj" height="220"  widht="220" class="centered-image">
+    <form action="/" method="post">
+        <label for="data">Selecione a data para ver cotação:</label>
+        <input type="date" id="data" name="data">
+        <input type="submit" value="Consultar">
+    </form>
+</body>
+</html>

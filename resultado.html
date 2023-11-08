@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Resultado da Consulta</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column; /* Alterado de row para column */
+            justify-content: center;
+            align-items: center; 
+            height: 90vh;
+            margin: 0;
+            backgound-color: rgb(255,0,0);
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 60%;
+            border-radius: 10px;
+            margin-top: 0px;
+        }
+
+        td, th {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Adicional: Estilo para o título centralizado acima da tabela */
+        .center-text {
+            text-align: center;
+            margin-top: 220px;
+        }
+    </style>
+</head>
+
+<body> 
+    <h2 class="center-text">Resultados para {{DataF}}</h2>
+    <table>
+        <tr>
+            <th>Descrição</th>
+            <th>Compra</th>
+            <th>Venda</th>
+        </tr>
+        <tr>
+            <td>Preço</td>
+            <td>{{ compra|round(3) }}</td>
+            <td>{{ venda|round(3) }}</td>
+        </tr>
+        <tr>
+            <td>Variação Diária</td>
+            <td>{{ var_diaria_compra|round(2) }}%</td>
+            <td>{{ var_diaria_venda|round(2) }}%</td>
+        </tr>
+        <tr>
+            <td>Variação Mensal</td>
+            <td>{{ var_mensal_compra|round(2) }}%</td>
+            <td>{{ var_mensal_venda|round(2) }}%</td>
+        </tr>
+        <tr>
+            <td>Variação Anual</td>
+            <td>{{ var_anual_compra|round(2) }}%</td>
+            <td>{{ var_anual_venda|round(2) }}%</td>
+        </tr>
+        <tr>
+            <td>Significância da Var. Diária:*</td>
+            <td>{{ significanciacompra }}</td>
+            <td>{{ significanciavenda }}</td>
+        </tr>
+    </table>
+    <a href="/">Voltar</a>
+    <br><br><br><br><br><br><br><br>
+    <hr>*Significante se: Var. diária da data escolhida > média das Var. diárias dos últimos 30 dias + 2 * desvio padrão das Var. diárias dos últimos 30 dias.</hr>
+</body>
+
+</html>
